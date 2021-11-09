@@ -4,8 +4,6 @@ import "jquery";
 import "popper.js/dist/umd/popper";
 import "bootstrap/dist/js/bootstrap";
 import "bootstrap/dist/css/bootstrap.css";
+import NavBar from "./App";
 
-var element = <button class="btn btn-danger"> Hello Rach</button>;
-ReactDOM.render(element, document.getElementById("root"));
-
-console.log(element);
+ReactDOM.render(<NavBar />, document.getElementById("root"));
