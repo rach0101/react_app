@@ -17,28 +17,28 @@ export default class MainContent extends Component {
         name: "Jones",
         phone: null,
         address: { city: "London" },
-        photo: "https://picsum.photos/id/1010/60",
+        photo: "https://picsum.photos/id/1011/60",
       },
       {
         id: 3,
         name: "Allen",
         phone: "123-453",
         address: { city: "San Francisco" },
-        photo: "https://picsum.photos/id/1010/60",
+        photo: "https://picsum.photos/id/1012/60",
       },
       {
         id: 4,
         name: "Rachel",
         phone: "123-454",
         address: { city: "San Diego" },
-        photo: "https://picsum.photos/id/1010/60",
+        photo: "https://picsum.photos/id/1013/60",
       },
       {
         id: 5,
         name: "Sarah",
         phone: "123-455",
         address: { city: "Denver" },
-        photo: "https://picsum.photos/id/1010/60",
+        photo: "https://picsum.photos/id/1014/60",
       },
     ],
   };
@@ -59,8 +59,10 @@ export default class MainContent extends Component {
           <thead>
             <tr>
               <th>#</th>
+              <th>Image</th>
               <th>Customer Name</th>
               <th>Phone</th>
+              <th>City</th>
             </tr>
           </thead>
           <tbody>{this.getCustomerRow()}</tbody>
