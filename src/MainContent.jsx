@@ -4,8 +4,8 @@ export default class MainContent extends Component {
     pageTitle: "Customers",
     customersCount: 5,
     customers: [
-      { id: 1, name: "Scott", phone: "123-456", address: { city: "Berlin" } },
-      { id: 2, name: "Jones", phone: "123-452", address: { city: "London" } },
+      { id: 1, name: "Scott", phone: null, address: { city: "Berlin" } },
+      { id: 2, name: "Jones", phone: null, address: { city: "London" } },
       {
         id: 3,
         name: "Allen",
@@ -48,7 +48,7 @@ export default class MainContent extends Component {
                 <tr key={cust.id}>
                   <td>{cust.id} </td>
                   <td>{cust.name}</td>
-                  <td>{cust.phone}</td>
+                  <td>{this.getPhoneToRender(cust.phone)}</td>
                   <td>{cust.address.city}</td>
                 </tr>
               );
@@ -63,4 +63,11 @@ export default class MainContent extends Component {
   onRefreshClick = () => {
     this.setState({ customersCount: 7 });
   };
+
+  getPhoneToRender(phone) {
+    if (phone) return phone;
+    else {
+      return <div className="bg-warning p-2">No Phone </div>;
+    }
+  }
 }
