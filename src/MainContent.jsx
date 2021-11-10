@@ -1,6 +1,16 @@
 import React, { Component } from "react";
 export default class MainContent extends Component {
-  state = { pageTitle: "Customers", customersCount: 5 };
+  state = {
+    pageTitle: "Customers",
+    customersCount: 5,
+    customers: [
+      { id: 1, name: "Scott", phone: "123-456" },
+      { id: 2, name: "Jones", phone: "123-452" },
+      { id: 3, name: "Allen", phone: "123-453" },
+      { id: 4, name: "Rachel", phone: "123-454" },
+      { id: 5, name: "Sarah", phone: "123-455" },
+    ],
+  };
 
   render() {
     return (
@@ -14,6 +24,26 @@ export default class MainContent extends Component {
             Refresh
           </button>
         </h4>
+        <table className="table">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Customer Name</th>
+              <th>Phone</th>
+            </tr>
+          </thead>
+          <tbody>
+            {this.state.customers.map((cust) => {
+              return (
+                <tr>
+                  <td> </td>
+                  <td></td>
+                  <td></td>
+                </tr>
+              );
+            })}
+          </tbody>
+        </table>
       </div>
     );
   }
