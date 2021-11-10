@@ -32,6 +32,10 @@ export default class ShoppingCart extends Component {
       </div>
     );
   }
-  handleIncrement = () => {};
-  handleDecrement = () => {};
+  handleIncrement = () => {
+    console.log("handle increment");
+  };
+  handleDecrement = () => {
+    console.log("handle decrement");
+  };
 }
