@@ -6,7 +6,6 @@ export default class Product extends Component {
   };
 
   render() {
-    console.log(this.props);
     return (
       <div className="col-lg-6">
         <div className="card m-2">
@@ -19,15 +18,16 @@ export default class Product extends Component {
           </div>
           {/* card body ends here */}
           <div className="card-footer">
-            <div className="float-left">
-              <span className="badge">{this.state.product.quantity}</span>
+            <div className="float-start">
+              <span className="badge bg-secondary">
+                {this.state.product.quantity}
+              </span>
               <div className="btn-group">
                 <button className="btn btn-outline-success">+</button>
                 <button className="btn btn-outline-success">-</button>
               </div>
             </div>
-            {/* float-left ends here */}
-            <div className="float-right">{this.props.children}</div>
+            <div className="float-end">{this.props.children}</div>
           </div>
           {/* card-footer ends here */}
         </div>
