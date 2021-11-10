@@ -113,8 +113,17 @@ export default class MainContent extends Component {
       );
     });
   };
+  //   executes when the user clicks on "change picture" button in the grid
+  // receives the 'customer' object and index of the currently clicked customer
   onChangePictureClick = (cust, index) => {
-    console.log(cust);
-    console.log(index);
+    // console.log(cust);
+    // console.log(index);
+
+    // get existing customers
+    var custArr = this.state.customers;
+    custArr[index].photo = "https://picsum.photos/id/104/60";
+
+    // update 'customers' array in the state
+    this.setState({ customers: custArr });
   };
 }
