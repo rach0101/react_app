@@ -6,5 +6,6 @@ import "bootstrap/dist/js/bootstrap";
 import "bootstrap/dist/css/bootstrap.css";
 import NavBar from "./App";
 import "./index.css";
+import "font-awesome/css/font-awesome.css";
 
 ReactDOM.render(<NavBar />, document.getElementById("root"));

@@ -10,7 +10,12 @@ export default class Product extends Component {
       <div className="col-lg-6">
         <div className="card m-2">
           <div className="card-body">
-            <div className="text-muted">#{this.state.product.id} </div>
+            <div className="text-muted">
+              #{this.state.product.id}
+              <span className="pull-right">
+                <i className="fa fa-times"></i>
+              </span>
+            </div>
             <h5 className="pt-2 border-top">
               {this.state.product.productName}
             </h5>
