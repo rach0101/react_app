@@ -12,7 +12,12 @@ export default class Product extends Component {
           <div className="card-body">
             <div className="text-muted">
               #{this.state.product.id}
-              <span className="pull-right">
+              <span
+                className="pull-right hand-icon"
+                onClick={() => {
+                  this.props.onDelete(this.state.product);
+                }}
+              >
                 <i className="fa fa-times"></i>
               </span>
             </div>

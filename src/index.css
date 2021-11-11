@@ -14,3 +14,6 @@
   color: red;
   font-size: 25px;
 }
+.hand-icon {
+  cursor: pointer;
+}
