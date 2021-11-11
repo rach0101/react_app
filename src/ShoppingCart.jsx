@@ -32,19 +32,25 @@ export default class ShoppingCart extends Component {
       </div>
     );
   }
+  //   executes when the user clicks the + button
   handleIncrement = (product) => {
-    // console.log("handle increment", product);
+    // get index of selected product
     let allProducts = [...this.state.products];
     let index = allProducts.indexOf(product);
-    console.log(allProducts[index]);
     allProducts[index].quantity++;
+
+    // update the state of current component (parent component)
     this.setState({ products: allProducts });
   };
+
+  //   executes when the user clicks on - button
   handleDecrement = (product) => {
+    //   get index of selected product
     let allProducts = [...this.state.products];
     let index = allProducts.indexOf(product);
-    console.log(allProducts[index]);
     allProducts[index].quantity--;
+
+    // update the state of current component (parent component)
     this.setState({ products: allProducts });
   };
 }
