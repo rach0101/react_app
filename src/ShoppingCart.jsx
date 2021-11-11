@@ -1,17 +1,26 @@
 import React, { Component } from "react";
 import Product from "./Product";
 export default class ShoppingCart extends Component {
-  state = {
-    products: [
-      { id: 1, productName: "iphone", price: 8900, quantity: 0 },
-      { id: 2, productName: "iphone", price: 200, quantity: 0 },
-      { id: 3, productName: "keyboard", price: 90, quantity: 0 },
-      { id: 4, productName: "Macbook", price: 1200, quantity: 0 },
-      { id: 5, productName: "monitor", price: 890, quantity: 0 },
-      { id: 6, productName: "standing desk", price: 900, quantity: 0 },
-    ],
-  };
+  // Executes when the component is mounted
+  constructor(props) {
+    console.log("constructor - Shopping Cart");
+
+    // calling super class's constructor
+    super(props);
+    this.state = {
+      products: [
+        { id: 1, productName: "iphone", price: 8900, quantity: 0 },
+        { id: 2, productName: "iphone", price: 200, quantity: 0 },
+        { id: 3, productName: "keyboard", price: 90, quantity: 0 },
+        { id: 4, productName: "Macbook", price: 1200, quantity: 0 },
+        { id: 5, productName: "monitor", price: 890, quantity: 0 },
+        { id: 6, productName: "standing desk", price: 900, quantity: 0 },
+      ],
+    };
+  }
+
   render() {
+    console.log("render- Shopping Cart");
     return (
       <div className="container-fluid">
         <h4>Shopping Cart</h4>
@@ -32,6 +41,12 @@ export default class ShoppingCart extends Component {
         </div>
       </div>
     );
+  }
+  // render ends here
+
+  componentDidMount() {
+    console.log("componentDidMount Shopping Cart");
+    // fetch data from data source
   }
   //   executes when the user clicks the + button
   handleIncrement = (product, maxValue) => {
