@@ -33,24 +33,30 @@ export default class ShoppingCart extends Component {
     );
   }
   //   executes when the user clicks the + button
-  handleIncrement = (product) => {
+  handleIncrement = (product, maxValue) => {
     // get index of selected product
     let allProducts = [...this.state.products];
     let index = allProducts.indexOf(product);
-    allProducts[index].quantity++;
 
-    // update the state of current component (parent component)
-    this.setState({ products: allProducts });
+    if (allProducts[index].quantity < maxValue) {
+      allProducts[index].quantity++;
+
+      // update the state of current component (parent component)
+      this.setState({ products: allProducts });
+    }
   };
 
   //   executes when the user clicks on - button
-  handleDecrement = (product) => {
+  handleDecrement = (product, minValue) => {
     //   get index of selected product
     let allProducts = [...this.state.products];
     let index = allProducts.indexOf(product);
-    allProducts[index].quantity--;
 
-    // update the state of current component (parent component)
-    this.setState({ products: allProducts });
+    if (allProducts[index].quantity > minValue) {
+      allProducts[index].quantity--;
+
+      // update the state of current component (parent component)
+      this.setState({ products: allProducts });
+    }
   };
 }
