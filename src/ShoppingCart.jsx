@@ -10,11 +10,11 @@ export default class ShoppingCart extends Component {
     this.state = {
       products: [
         { id: 1, productName: "iphone", price: 8900, quantity: 0 },
-        { id: 2, productName: "iphone", price: 200, quantity: 0 },
-        { id: 3, productName: "keyboard", price: 90, quantity: 0 },
-        { id: 4, productName: "Macbook", price: 1200, quantity: 0 },
-        { id: 5, productName: "monitor", price: 890, quantity: 0 },
-        { id: 6, productName: "standing desk", price: 900, quantity: 0 },
+        // { id: 2, productName: "iphone", price: 200, quantity: 0 },
+        // { id: 3, productName: "keyboard", price: 90, quantity: 0 },
+        // { id: 4, productName: "Macbook", price: 1200, quantity: 0 },
+        // { id: 5, productName: "monitor", price: 890, quantity: 0 },
+        // { id: 6, productName: "standing desk", price: 900, quantity: 0 },
       ],
     };
   }
@@ -48,6 +48,30 @@ export default class ShoppingCart extends Component {
     console.log("componentDidMount Shopping Cart");
     // fetch data from data source
   }
+
+  componentDidUpdate(prevProps, prevState) {
+    console.log(
+      "componentDidUpdate",
+      prevProps,
+      prevState,
+      this.props,
+      this.state
+    );
+
+    // // if(precProps.x != this.props.x){
+    //   // make http call
+    // }
+  }
+  componentWillUnmount() {
+    console.log("component will unount");
+  }
+
+  componentDidCatch(error, info) {
+    console.log("component caught error", info);
+
+    localStorage.lassError = `${error}\n ${JSON.stringify(info)}`;
+  }
+
   //   executes when the user clicks the + button
   handleIncrement = (product, maxValue) => {
     // get index of selected product
