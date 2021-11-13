@@ -4,9 +4,8 @@ import Dashboard from "./Dashboard";
 import Login from "./Login";
 import ShoppingCart from "./ShoppingCart";
 import CustomersList from "./CustomersList";
-import { Route } from "react-router";
-import { Routes } from "react-router-dom";
-import { BrowserRouter } from "react-router-dom";
+// import { Route} from "react-router";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import NoMatchPage from "./NoMatchPage";
 
 export default class App extends Component {
