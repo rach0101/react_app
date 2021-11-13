@@ -44,8 +44,10 @@ export default class ShoppingCart extends Component {
       console.log(response);
 
       var promise2 = response.json();
-      promise2.then((products) => {
-        console.log(products);
+      promise2.then((prods) => {
+        console.log(prods);
+
+        this.setState({ products: prods });
       });
     });
   }
