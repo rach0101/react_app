@@ -46,20 +46,26 @@ export default class Login extends React.Component {
       </div>
     );
   } // end of render
-  onLoginClick = () => {
+  onLoginClick = async () => {
     console.log(this.state);
-    if (
-      this.state.email === "admin@gmail.com" &&
-      this.state.password === "admin123"
-    ) {
-      console.log("success");
+    var response = await fetch(
+      `http://localhost:5000/users?email=${this.state.email}&password=${this.state.password}`,
+      { method: "GET" }
+    );
+
+    var body = await response.json();
+    console.log(body);
+
+    if (body.length > 0) {
       this.setState({
         message: <span className="text-success"> successfully logged-in</span>,
       });
     } else {
       console.log("failure");
       this.setState({
-        message: <span className="text-danger"> invalid login</span>,
+        message: (
+          <span className="text-danger"> invalid login, please try again</span>
+        ),
       });
     }
   };
