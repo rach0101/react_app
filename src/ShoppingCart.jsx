@@ -8,14 +8,7 @@ export default class ShoppingCart extends Component {
     // calling super class's constructor
     super(props);
     this.state = {
-      products: [
-        { id: 1, productName: "iphone", price: 8900, quantity: 0 },
-        // { id: 2, productName: "iphone", price: 200, quantity: 0 },
-        // { id: 3, productName: "keyboard", price: 90, quantity: 0 },
-        // { id: 4, productName: "Macbook", price: 1200, quantity: 0 },
-        // { id: 5, productName: "monitor", price: 890, quantity: 0 },
-        // { id: 6, productName: "standing desk", price: 900, quantity: 0 },
-      ],
+      products: [],
     };
   }
 
@@ -46,7 +39,15 @@ export default class ShoppingCart extends Component {
 
   componentDidMount() {
     console.log("componentDidMount Shopping Cart");
-    // fetch data from data source
+    var promise = fetch("http://localhost:5000/products", { method: "GET" });
+    promise.then((response) => {
+      console.log(response);
+
+      var promise2 = response.json();
+      promise2.then((products) => {
+        console.log(products);
+      });
+    });
   }
 
   componentDidUpdate(prevProps, prevState) {
