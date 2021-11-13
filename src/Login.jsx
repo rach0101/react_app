@@ -3,7 +3,7 @@ import React, { Component } from "react";
 export default class Login extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { email: "abc@test.com", password: "abc123" };
+    this.state = { email: "", password: "", message: "" };
   }
   render() {
     return (
@@ -18,7 +18,6 @@ export default class Login extends React.Component {
             value={this.state.email}
             onChange={(event) => {
               this.setState({ email: event.target.value });
-              console.log(this.state.email);
             }}
           ></input>
         </div>
@@ -38,7 +37,8 @@ export default class Login extends React.Component {
           ></input>
         </div>
         {/* password ends */}
-        <div>
+        <div className="text-end">
+          {this.state.message}
           <button className="btm btn-primary" onClick={this.onLoginClick}>
             Login
           </button>
@@ -48,5 +48,19 @@ export default class Login extends React.Component {
   } // end of render
   onLoginClick = () => {
     console.log(this.state);
+    if (
+      this.state.email === "admin@gmail.com" &&
+      this.state.password === "admin123"
+    ) {
+      console.log("success");
+      this.setState({
+        message: <span className="text-success"> successfully logged-in</span>,
+      });
+    } else {
+      console.log("failure");
+      this.setState({
+        message: <span className="text-danger"> invalid login</span>,
+      });
+    }
   };
 }
